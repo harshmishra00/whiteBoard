@@ -5,7 +5,7 @@ services:
     env: node
     region: ohio
     plan: free
-    rootDir: whiteboard/server
+    rootDir: server
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -15,12 +15,12 @@ services:
         value: production
 
   # Frontend Site
-  - type: static
+  - type: static_site
     name: whineboard-client
-    env: static
+
     region: ohio
     plan: free
-    rootDir: whiteboard/frontEnd
+    rootDir: frontEnd
     buildCommand: npm install && npm run build
     staticPublishDir: build
     envVars:
