@@ -107,13 +107,13 @@ const Canvas = ({
         prevElements.map((ele, index) =>
           index === elements.length - 1
             ? {
-                offsetX: ele.offsetX,
-                offsetY: ele.offsetY,
-                width: offsetX - ele.offsetX,
-                height: offsetY - ele.offsetY,
-                stroke: ele.stroke,
-                element: ele.element,
-              }
+              offsetX: ele.offsetX,
+              offsetY: ele.offsetY,
+              width: offsetX - ele.offsetX,
+              height: offsetY - ele.offsetY,
+              stroke: ele.stroke,
+              element: ele.element,
+            }
             : ele
         )
       );
@@ -122,13 +122,13 @@ const Canvas = ({
         prevElements.map((ele, index) =>
           index === elements.length - 1
             ? {
-                offsetX: ele.offsetX,
-                offsetY: ele.offsetY,
-                width: offsetX,
-                height: offsetY,
-                stroke: ele.stroke,
-                element: ele.element,
-              }
+              offsetX: ele.offsetX,
+              offsetY: ele.offsetY,
+              width: offsetX,
+              height: offsetY,
+              stroke: ele.stroke,
+              element: ele.element,
+            }
             : ele
         )
       );
@@ -137,12 +137,12 @@ const Canvas = ({
         prevElements.map((ele, index) =>
           index === elements.length - 1
             ? {
-                offsetX: ele.offsetX,
-                offsetY: ele.offsetY,
-                path: [...ele.path, [offsetX, offsetY]],
-                stroke: ele.stroke,
-                element: ele.element,
-              }
+              offsetX: ele.offsetX,
+              offsetY: ele.offsetY,
+              path: [...ele.path, [offsetX, offsetY]],
+              stroke: ele.stroke,
+              element: ele.element,
+            }
             : ele
         )
       );
