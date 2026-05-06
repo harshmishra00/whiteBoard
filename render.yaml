@@ -1,0 +1,31 @@
+services:
+  # Backend Server
+  - type: web
+    name: whineboard-server
+    env: node
+    region: ohio
+    plan: free
+    rootDir: whiteboard/server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5001
+      - key: NODE_ENV
+        value: production
+
+  # Frontend Site
+  - type: static
+    name: whineboard-client
+    env: static
+    region: ohio
+    plan: free
+    rootDir: whiteboard/frontEnd
+    buildCommand: npm install && npm run build
+    staticPublishDir: build
+    envVars:
+      - key: REACT_APP_SERVER_URL
+        fromService:
+          name: whineboard-server
+          type: web
+          property: host
