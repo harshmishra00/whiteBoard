@@ -15,18 +15,9 @@ services:
       - key: NODE_ENV
         value: production
 
-      - key: CLIENT_URL
-        fromService:
-          name: whineboard-client
-          type: web
-          property: url
-
   # Frontend React App
-  - type: web
+  - type: static_site
     name: whineboard-client
-    env: static
-    region: ohio
-    plan: free
 
     rootDir: frontEnd
 
@@ -35,7 +26,4 @@ services:
 
     envVars:
       - key: REACT_APP_SERVER_URL
-        fromService:
-          name: whineboard-server
-          type: web
-          property: url
+        value: https://whineboard-server.onrender.com
